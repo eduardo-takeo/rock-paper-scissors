@@ -13,6 +13,7 @@
   --blue-400: hsl(230, 89%, 62%);
   --red: hsl(349, 71%, 52%);
   --yellow: hsl(39, 89%, 49%);
+  --white: hsl(360, 100%, 100%);
 }
 
 @media (max-width: 420px) {
@@ -28,6 +29,7 @@
 html {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 600;
+  color: var(--white);
 }
 
 body {
@@ -36,6 +38,44 @@ body {
   background-size: cover;
   height: 100vh;
   width: 100%;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.score {
+  border: 2px solid var(--gray-200);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.score-title h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  line-height: 2.5rem;
+}
+.score-count {
+  background-color: var(--white);
+  padding: 2rem 3rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+.score-count h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  color: var(--blue-500);
+}
+.score-count span {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gray-800);
 }
 
 /*# sourceMappingURL=style.css.map */
