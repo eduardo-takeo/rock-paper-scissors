@@ -1,6 +1,7 @@
 const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
+const score = document.getElementById("score");
 
 const plays = {
   1: "Rock",
@@ -39,4 +40,22 @@ function showResult(result, playerChoice, cpuChoice) {
   alert(
     `${result} \n Player chose ${plays[playerChoice]} and CPU chose ${plays[cpuChoice]}`
   );
+
+  updateScore(result);
+}
+
+function updateScore(result) {
+  let counter = Number(score.innerHTML);
+  switch (result) {
+    case "Winner":
+      counter++;
+      break;
+    case "Loser":
+      counter--;
+      break;
+    default:
+      break;
+  }
+
+  score.innerHTML = String(counter);
 }
