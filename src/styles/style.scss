@@ -142,7 +142,7 @@ a {
   right: 3rem;
 }
 
-.rules-button {
+#rules-button {
   max-width: 10rem;
   padding: 1rem 2rem;
   background-color: var(--dark-blue-700);
@@ -159,4 +159,12 @@ a {
     background-color: var(--white);
     color: var(--gray-800);
   }
+}
+
+#rules-modal {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

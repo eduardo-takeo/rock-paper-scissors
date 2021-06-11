@@ -8,20 +8,35 @@ const plays = {
   3: "Scissors",
 };
 
-//TODO
-rockButton.addEventListener("click", startGame);
-paperButton.addEventListener("click", startGame);
-scissorsButton.addEventListener("click", startGame);
+rockButton.addEventListener("click", () => startGame(1));
+paperButton.addEventListener("click", () => startGame(2));
+scissorsButton.addEventListener("click", () => startGame(3));
 
-function startGame(humanPlay) {
-  const cpuPlay = Math.floor(Math.random() * 3) + 1;
+function startGame(playerChoice) {
+  let result = "";
+  const cpuChoice = Math.floor(Math.random() * 3) + 1;
 
-  switch (humanPlay) {
+  switch (playerChoice) {
+    case cpuChoice:
+      result = "Draw";
+      break;
     case 1:
-      return cpuPlay === 3 ? "Winner" : "Loser";
+      result = cpuChoice === 3 ? "Winner" : "Loser";
+      break;
     case 2:
-      return cpuPlay === 1 ? "Winner" : "Loser";
+      result = cpuChoice === 1 ? "Winner" : "Loser";
+      break;
     case 3:
-      return cpuPlay === 2 ? "Winner" : "Loser";
+      result = cpuChoice === 2 ? "Winner" : "Loser";
+      break;
   }
+
+  showResult(result, playerChoice, cpuChoice);
+}
+
+//TODO: Renderizar tela de resultado
+function showResult(result, playerChoice, cpuChoice) {
+  alert(
+    `${result} \n Player chose ${plays[playerChoice]} and CPU chose ${plays[cpuChoice]}`
+  );
 }
