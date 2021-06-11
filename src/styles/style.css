@@ -95,17 +95,62 @@ a {
   align-items: center;
   justify-content: center;
 }
-.controls-options {
+.controls-newGame {
   background-image: url("/src/assets/bg-triangle.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
-.controls-options img {
+.controls-newGame img {
   background-color: var(--white);
   border-radius: 50%;
   padding: 4rem;
   cursor: pointer;
+}
+.controls-results {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.controls-results-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.controls-results-item h1 {
+  text-transform: uppercase;
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+}
+.controls-results-item h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 5rem;
+  font-weight: 600;
+}
+.controls-results-item img {
+  background-color: var(--white);
+  border-radius: 50%;
+  padding: 6rem;
+}
+.controls-results-item button {
+  width: 15rem;
+  padding: 1rem 2rem;
+  background-color: var(--white);
+  color: var(--dark-blue-700);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: all 0.2s;
+}
+.controls-results-item button:hover {
+  background-color: var(--gray-800);
+  color: var(--white);
 }
 
 #paper {

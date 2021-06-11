@@ -107,7 +107,7 @@ a {
   align-items: center;
   justify-content: center;
 
-  &-options {
+  &-newGame {
     background-image: url("/src/assets/bg-triangle.svg");
     background-position: center;
     background-size: contain;
@@ -118,6 +118,61 @@ a {
       border-radius: 50%;
       padding: 4rem;
       cursor: pointer;
+    }
+  }
+
+  &-results {
+    //TODO: Toggle between newGame and Results screens
+    // display: flex;
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        text-transform: uppercase;
+        font-size: 4rem;
+        letter-spacing: 0.2rem;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+        margin-bottom: 5rem;
+        font-weight: 600;
+      }
+
+      // TODO: Add borders
+      img {
+        background-color: var(--white);
+        border-radius: 50%;
+        padding: 6rem;
+      }
+
+      button {
+        width: 15rem;
+        padding: 1rem 2rem;
+        background-color: var(--white);
+        color: var(--dark-blue-700);
+        border: none;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: var(--gray-800);
+          color: var(--white);
+        }
+      }
     }
   }
 }
