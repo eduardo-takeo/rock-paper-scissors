@@ -3,7 +3,7 @@ const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
 const score = document.getElementById("score");
-const playAgainButton = document.getElementById("play-again");
+const playAgainButton = document.getElementById("play-again-button");
 
 //Enum
 const plays = {
@@ -28,13 +28,13 @@ function startGame(playerChoice) {
       result = "Draw";
       break;
     case 1:
-      result = cpuChoice === 3 ? "Winner" : "Loser";
+      result = cpuChoice === 3 ? "You win" : "You lost";
       break;
     case 2:
-      result = cpuChoice === 1 ? "Winner" : "Loser";
+      result = cpuChoice === 1 ? "You win" : "You lost";
       break;
     case 3:
-      result = cpuChoice === 2 ? "Winner" : "Loser";
+      result = cpuChoice === 2 ? "You win" : "You lost";
       break;
   }
 
@@ -42,14 +42,18 @@ function startGame(playerChoice) {
   showResult(result, playerChoice, cpuChoice);
 }
 
-//TODO: Renderizar tela de resultado
 function showResult(result, playerChoice, cpuChoice) {
-  alert(
-    `${result} \n Player chose ${plays[playerChoice]} and CPU chose ${plays[cpuChoice]}`
-  );
-
   document.getElementsByClassName("controls-newGame")[0].style.display = "none";
   document.getElementsByClassName("controls-results")[0].style.display = "flex";
+
+  document.getElementById("player-choice").src = `assets/icon-${plays[
+    playerChoice
+  ].toLowerCase()}.svg`;
+  document.getElementById("cpu-choice").src = `assets/icon-${plays[
+    cpuChoice
+  ].toLowerCase()}.svg`;
+
+  document.getElementById("result").innerHTML = result;
 }
 
 function playAgain() {
@@ -61,10 +65,10 @@ function playAgain() {
 function updateScore(result) {
   let counter = Number(score.innerHTML);
   switch (result) {
-    case "Winner":
+    case "You win":
       counter++;
       break;
-    case "Loser":
+    case "You lost":
       counter--;
       break;
     default:
