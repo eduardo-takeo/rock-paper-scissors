@@ -46,12 +46,37 @@ function showResult(result, playerChoice, cpuChoice) {
   document.getElementsByClassName("controls-newGame")[0].style.display = "none";
   document.getElementsByClassName("controls-results")[0].style.display = "flex";
 
-  document.getElementById("player-choice").src = `assets/icon-${plays[
+  const playerChoiceImage = document.getElementById("player-choice");
+  const cpuChoiceImage = document.getElementById("cpu-choice");
+
+  playerChoiceImage.src = `assets/icon-${plays[
     playerChoice
   ].toLowerCase()}.svg`;
-  document.getElementById("cpu-choice").src = `assets/icon-${plays[
-    cpuChoice
-  ].toLowerCase()}.svg`;
+  cpuChoiceImage.src = `assets/icon-${plays[cpuChoice].toLowerCase()}.svg`;
+
+  switch (playerChoice) {
+    case 1:
+      playerChoiceImage.style.border = "1.5rem solid var(--red)";
+      break;
+    case 2:
+      playerChoiceImage.style.border = "1.5rem solid var(--blue-500)";
+      break;
+    case 3:
+      playerChoiceImage.style.border = "1.5rem solid var(--yellow)";
+      break;
+  }
+
+  switch (cpuChoice) {
+    case 1:
+      cpuChoiceImage.style.border = "1.5rem solid var(--red)";
+      break;
+    case 2:
+      cpuChoiceImage.style.border = "1.5rem solid var(--blue-500)";
+      break;
+    case 3:
+      cpuChoiceImage.style.border = "1.5rem solid var(--yellow)";
+      break;
+  }
 
   document.getElementById("result").innerHTML = result;
 }
