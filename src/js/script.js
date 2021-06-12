@@ -3,6 +3,7 @@ const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
 const score = document.getElementById("score");
+const playAgainButton = document.getElementById("play-again");
 
 //Enum
 const plays = {
@@ -15,6 +16,7 @@ const plays = {
 rockButton.addEventListener("click", () => startGame(1));
 paperButton.addEventListener("click", () => startGame(2));
 scissorsButton.addEventListener("click", () => startGame(3));
+playAgainButton.addEventListener("click", () => playAgain());
 
 //Functions
 function startGame(playerChoice) {
@@ -45,6 +47,15 @@ function showResult(result, playerChoice, cpuChoice) {
   alert(
     `${result} \n Player chose ${plays[playerChoice]} and CPU chose ${plays[cpuChoice]}`
   );
+
+  document.getElementsByClassName("controls-newGame")[0].style.display = "none";
+  document.getElementsByClassName("controls-results")[0].style.display = "flex";
+}
+
+function playAgain() {
+  document.getElementsByClassName("controls-newGame")[0].style.display =
+    "block";
+  document.getElementsByClassName("controls-results")[0].style.display = "none";
 }
 
 function updateScore(result) {
