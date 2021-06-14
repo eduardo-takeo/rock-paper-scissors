@@ -122,8 +122,6 @@ a {
   }
 
   &-results {
-    //TODO: Toggle between newGame and Results screens
-    // display: flex;
     display: none;
     width: 100%;
     align-items: center;
@@ -149,7 +147,6 @@ a {
         font-weight: 600;
       }
 
-      // TODO: Add borders
       img {
         background-color: var(--white);
         border-radius: 50%;
