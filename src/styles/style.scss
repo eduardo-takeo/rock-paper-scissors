@@ -219,4 +219,28 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 2rem 6rem 4rem 6rem;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+
+    h1 {
+      color: var(--dark-blue-600);
+      text-transform: uppercase;
+      font-size: 2rem;
+      letter-spacing: 0.2rem;
+    }
+
+    button {
+      width: 2rem;
+      height: 2rem;
+      border: none;
+      background: var(--white);
+    }
+  }
 }
